@@ -1,0 +1,16 @@
+int x=0;
+int speed=5;
+void setup()
+{
+  size(500,500);
+}
+
+void draw()
+{
+   background(#2009BC);
+  fill(#9387E3);
+  rect(x,x,100,100);
+  x=x+speed;
+  delay(1);
+ 
+}
