@@ -1,0 +1,21 @@
+#void setup()
+{
+  size(1000,1000);
+}
+void draw()
+{
+  background(0);
+  fill(#CE0606);
+  if (keyPressed)
+ 
+  {
+    background(#4846FF);
+    fill(#35FA36);
+    ellipse(mouseX,mouseY,100,100);
+  }
+  else
+  {
+    fill(#CE0606);
+    ellipse(mouseX,mouseY,100,100);
+  }
+}
