@@ -1,0 +1,10 @@
+void setup()
+{
+  size(1500,1000);
+  background(0);
+}
+
+void draw()
+{
+  Target player = new Target(100,100);
+}
