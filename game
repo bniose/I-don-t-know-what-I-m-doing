@@ -6,5 +6,7 @@ void setup()
 
 void draw()
 {
-  Target player = new Target(100,100);
+  Target goal = new Target(100,100);
+  Cannon player = new Cannon(10,10);
+  ellipse(mouseX,mouseY,10,10);
 }
