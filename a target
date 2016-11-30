@@ -11,12 +11,12 @@ class Target
     fill(#FF0D1D);
     ellipse(x,y,100,100);
     fill(#FFFFFF);
-    ellipse(x+10,y+10,80,80);
+    ellipse(x,y,80,80);
     fill(#FF0D1D);
-    ellipse(x+20,y+20,60,60);
+    ellipse(x,y,60,60);
     fill(#FFFFFF);
-    ellipse(x+30,y+30,40,40);
+    ellipse(x,y,40,40);
     fill(#FF0D1D);
-    ellipse(x+40,y+40,20,20);
+    ellipse(x,y,20,20);
   }
 }
