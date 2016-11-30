@@ -1,0 +1,18 @@
+class Cannon 
+{
+  int myX = 0;
+  int myY = 0;
+  
+  public Cannon(int x, int y)
+  {
+    myX = x;
+    myY = y;
+    
+    fill(#5A5959);
+    ellipse(x+10,y+10,20,20);
+    rect(x,y+10,20,60);
+    fill(#815000);
+    rect(x-5,y,5,15);
+    rect(x+20,y,5,15);
+  }
+}
