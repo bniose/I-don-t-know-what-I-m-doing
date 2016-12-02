@@ -1,0 +1,13 @@
+class Ball 
+{
+  int myX = 0;
+  int myY = 0;
+  
+  public Ball(int x, int y)
+  {
+    myX = x;
+    myY = y;
+    
+    ellipse(x,y,20,20);
+  }
+}
