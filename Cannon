@@ -12,7 +12,7 @@ class Cannon
     ellipse(x+10,y+10,20,20);
     rect(x,y+10,20,60);
     fill(#815000);
-    rect(x-5,y,5,15);
-    rect(x+20,y,5,15);
+    rect(x-5,y,5,15,3);
+    rect(x+20,y,5,15,3);
   }
 }
