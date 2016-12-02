@@ -1,11 +1,28 @@
+float angle1 = 0.0;
+float segLength = 100;
+
 void setup()
 {
   size(1500,1000);
-  background(0);
+  strokeWeight(1);
+  stroke(255, 160);
 }
 
 void draw()
 {
+    background(0);
   Target goal = new Target(100,100);
-  Cannon player = new Cannon(10,10);
+  //Cannon player = new Cannon(10,10);
+  angle1 = (mouseX/float(width) - 0.5) * -PI;
+  Ball object= new Ball(200,200);
+  strokeWeight(10);
+  cannon(10,10,angle1);
+  strokeWeight(1);
+
+}
+
+void cannon(float x, float y, float a) {
+  translate(x, y);
+  rotate(a);
+  line(0, 0, segLength, 0);
 }
