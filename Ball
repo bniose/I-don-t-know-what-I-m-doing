@@ -8,6 +8,7 @@ class Ball
     myX = x;
     myY = y;
     
+    fill(75,75,75);
     ellipse(x,y,20,20);
   }
 }
