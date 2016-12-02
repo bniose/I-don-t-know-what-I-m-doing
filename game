@@ -8,5 +8,4 @@ void draw()
 {
   Target goal = new Target(100,100);
   Cannon player = new Cannon(10,10);
-  ellipse(mouseX,mouseY,10,10);
 }
