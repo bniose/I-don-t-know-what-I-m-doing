@@ -1,27 +1,65 @@
+int rad = 10;        // Width of the shape
+float xpos, ypos;    // Starting position of shape   
+
+float xspeed = 0;  // Speed of the shape
+float yspeed = 0;  // Speed of the shape
+
+int xdirection = 1;  // Left or Right
+int ydirection = 0;  // Top to Bottom
+
 float angle1 = 0.0;
 float segLength = 100;
 
-void setup()
+void setup() 
 {
   size(1500,1000);
   strokeWeight(1);
   stroke(255, 160);
+  frameRate(100);
+  ellipseMode(RADIUS);
+  // Set the starting position of the shape
+  xpos = 10;
+  ypos = height/2;
+  
 }
 
-void draw()
+void draw() 
 {
-    background(0);
+  background(#000000);
+  fill(75,75,75);
+    ellipse(xpos,ypos,rad,rad);
   Target goal = new Target(100,100);
   Cannon player = new Cannon(10,height/2);
   angle1 = (-mouseY/float(height)+.5) * -PI;
-  Ball object= new Ball(200,200);
   strokeWeight(10);
-  Cannon(10,height/2,angle1);
+  cannon(10,height/2,angle1);
   strokeWeight(1);
+  // Update the position of the shape
+  xpos = xpos + ( xspeed * xdirection );
+  ypos = ypos + ( yspeed * ydirection );
+  
+  // Test to see if the shape exceeds the boundaries of the screen
+  // If it does, reverse its direction by multiplying by -1
+  if (xpos > width-rad || xpos < rad) {
+    xdirection *= -1;
+  }
+  if (ypos > height-rad || ypos < rad) {
+    ydirection *= -1;
+  }
 
+  
 }
-void Cannon(float x, float y, float a) {
+void mouseClicked() {
+    xspeed= xspeed+5;
+    yspeed= yspeed+5;
+    fill(#FF3E3E);
+    
+  }
+  void cannon(float x, float y, float a) {
   translate(x, y);
   rotate(a);
-  line(0, 0, segLength,0);
-}
+  line(0, 0, segLength, 0);
+  }
+
+  // Draw the shape
+  
