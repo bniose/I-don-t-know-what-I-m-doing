@@ -9,7 +9,7 @@ class Cannon
     myY = y;
     
     fill(#5A5959);
-    ellipse(x+10,y+10,20,20);
+    ellipse(x+10,y+10,10,10);
     rect(x,y+10,20,60);
     fill(#815000);
     rect(x-5,y,5,15,3);
