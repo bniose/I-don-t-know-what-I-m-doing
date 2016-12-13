@@ -9,7 +9,8 @@ int ydirection = 0;  // Top to Bottom
 
 float angle1 = 0.0;
 float segLength = 100;
-
+boolean gameover=false;
+  PFont myFont;
 void setup() 
 {
   size(1500,1000);
@@ -17,9 +18,11 @@ void setup()
   stroke(255, 160);
   frameRate(100);
   ellipseMode(RADIUS);
-  // Set the starting position of the shape
   xpos = 10;
   ypos = height/2;
+   myFont= createFont("AHJSans-Bold-48.vlw", 40);
+   textFont(myFont);
+   textAlign(CENTER, CENTER);
   
 }
 
@@ -29,24 +32,19 @@ void draw()
   fill(75,75,75);
     ellipse(xpos,ypos,rad,rad);
   Target goal = new Target(100,100);
+  if (xpos > width || xpos < rad) {
+    text("GAME OVER. YOU'RE BAD AND YOU SHOULD FEEL BAD!", width/2, height/2);
+  }
+  if (ypos > height || ypos < rad) {
+    text("GAME OVER. YOU'RE BAD AND YOU SHOULD FEEL BAD!", width/2, height/2);
+  }
   Cannon player = new Cannon(10,height/2);
   angle1 = (-mouseY/float(height)+.5) * -PI;
   strokeWeight(10);
   cannon(10,height/2,angle1);
   strokeWeight(1);
-  // Update the position of the shape
   xpos = xpos + ( xspeed * xdirection );
   ypos = ypos + ( yspeed * ydirection );
-  
-  // Test to see if the shape exceeds the boundaries of the screen
-  // If it does, reverse its direction by multiplying by -1
-  if (xpos > width-rad || xpos < rad) {
-    xdirection *= -1;
-  }
-  if (ypos > height-rad || ypos < rad) {
-    ydirection *= -1;
-  }
-
   
 }
 void mouseClicked() {
@@ -60,6 +58,3 @@ void mouseClicked() {
   rotate(a);
   line(0, 0, segLength, 0);
   }
-
-  // Draw the shape
-  
