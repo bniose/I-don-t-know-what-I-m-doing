@@ -2,6 +2,7 @@ class Target
 {
   int myX = 0;
   int myY = 0;
+  int rad2 = 50;
   
   public Target(int x, int y)
   {
@@ -9,14 +10,14 @@ class Target
     myY = y;
     
     fill(#FF0D1D);
-    ellipse(x,y,100,100);
-    fill(#FFFFFF);
-    ellipse(x,y,80,80);
-    fill(#FF0D1D);
-    ellipse(x,y,60,60);
+    ellipse(x,y,rad2,rad2);
     fill(#FFFFFF);
     ellipse(x,y,40,40);
     fill(#FF0D1D);
+    ellipse(x,y,30,30);
+    fill(#FFFFFF);
     ellipse(x,y,20,20);
+    fill(#FF0D1D);
+    ellipse(x,y,10,10);
   }
 }
