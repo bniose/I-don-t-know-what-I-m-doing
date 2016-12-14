@@ -1,0 +1,69 @@
+int rad = 10;        // Width of the shape
+float xpos, ypos;    // Starting position of shape   
+
+float xspeed = 0;  // Speed of the shape
+float yspeed = 0;  // Speed of the shape
+
+int xdirection = 1;  // Left or Right
+int ydirection = 1;  // Top to Bottom
+
+float angle1 = 0.0;
+float segLength = 100;
+boolean gameover=false;
+boolean mouseClkd = false;
+  PFont myFont;
+void setup() 
+{
+  size(1500,1000);
+  strokeWeight(1);
+  stroke(255, 160);
+  frameRate(100);
+  ellipseMode(RADIUS);
+  xpos = 10;
+  ypos = height/2;
+   myFont= createFont("AHJSans-Bold-48.vlw", 40);
+   textFont(myFont);
+   textAlign(CENTER, CENTER);
+  
+}
+
+void draw() 
+{
+  background(#000000);
+  fill(75,75,75);
+  //ellipse(xpos,ypos,rad,rad);
+  Target goal = new Target(100,100);
+  if (xpos > width || xpos < rad) {
+    text("GAME OVER. YOU'RE BAD AND YOU SHOULD FEEL BAD!", width/2, height/2);
+  }
+  if (ypos > height || ypos < rad) {
+    text("GAME OVER. YOU'RE BAD, AND YOU SHOULD FEEL BAD!", width/2, height/2);
+  }
+  //Cannon player = new Cannon(10,height/2);
+  angle1 = (mouseY + 200 * PI)/100;
+  strokeWeight(10);
+  cannon(10,height/2,angle1);
+  strokeWeight(1);
+  xpos = xpos + ( xspeed * xdirection );
+  ypos = ypos + ( yspeed * ydirection );
+  xspeed= xspeed+5;
+  yspeed= yspeed+5;
+  
+}
+void mouseClicked() {
+    mouseClkd = true;
+    
+}
+
+  void cannon(float x, float y, float a) {
+  translate((-height/2)+60, y);
+  rotate(a);
+  line(0, 0, segLength, 0);
+  strokeWeight(1);
+  Cannon player = new Cannon(10,height/2);
+  if(mouseClkd)
+  {
+    fill(#FF3E3E);
+    ellipse(xpos,ypos,rad,rad);
+  }
+  }
